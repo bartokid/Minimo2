@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textViewResult = findViewById(R.id.test_view_result);
-        //recyclerView = (RecyclerView) findViewById(R.id.recycle_View);
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://do.diba.cat/api/dataset/museus/format/json/pag-ini/1/pag-fi/10/")
@@ -61,8 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
                 for(Element element: elements){
                     String content ="";
-                    content += "Imatge: " + element.getImatge().get(0) + "\n";
-                    content += "Nom: " + element.getAdrecaNom() + "\n\n";
+                    content+= "\n\n";
+                    content += "Nom: " + element.getAdrecaNom() + "\n";
+                    content += "Imatge: " + element.getImatge().get(0) + "\n\n";
 
 
                     textViewResult.append(content);
